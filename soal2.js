@@ -1,3 +1,4 @@
+const prompt = require('prompt-sync')({sigint: true});
 let productBin = {
     "requestId": null,
     "data": [
@@ -35,21 +36,18 @@ let productBin = {
     "message": "success"
   };
   
-  function calculateTotalQuantity(productCode) {
-      let totalQuantity = 0;
-  
-      // Mengulangi setiap item dalam data
-      for (let item of productBin.data) {
-          // Memeriksa apakah productCode sesuai
-          if (item.productCode === productCode) {
-              totalQuantity += item.quantity; // Menjumlahkan quantity
+function getTotalQuantity(productCode) {
+     let totalQuantity = 0;
+     // Mengulangi setiap item dalam data
+     for (let item of productBin.data) {
+         // Memeriksa apakah productCode sesuai
+         if (item.productCode === productCode) {
+             totalQuantity += item.quantity; // Menjumlahkan quantity
           }
-      }
-      
-      return totalQuantity;
+      }      
+    return totalQuantity; //Mengembalikan nilai totalQuantity setelah semua elemen dalam array telah diproses
   }
-  
-  // Menghitung total quantity untuk productCode "FBR00040101"
-  let total = calculateTotalQuantity("FBR00040101");
-  console.log("Total quantity untuk produk FBR00040101:", total);
+// Menghitung total quantity untuk productCode "FBR00040101"
+let total = getTotalQuantity("FBR00040101");
+console.log("Total quantity untuk produk FBR00040101 = ", total); //Mencetak total quantity berdasarkan nilai var total
   
