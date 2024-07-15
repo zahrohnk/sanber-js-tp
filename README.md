@@ -8,6 +8,6 @@ Node.js,
 npm
 
 # Run Program
-git clone https://github.com/zahrohnk/sanber-js-tp.git,
-npm install prompt-sync,
-node soal1.js
+Type in the terminal git clone https://github.com/zahrohnk/sanber-js-tp.git,
+then npm install prompt-sync,
+then node soal1.js or node soal2.js
